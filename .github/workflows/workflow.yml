@@ -8,15 +8,15 @@ jobs:
     tests:
         name: Run Test & Deploy
         runs-on: ubuntu-latest
-#        services:
-#            mysql:
-#                image: mysql:8.0.21
-#                env:
-#                    MYSQL_ROOT_PASSWORD: password
-#                    MYSQL_DATABASE: cicd_test_test
-#                ports:
-#                    - 3306:3306
-#                options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+        services:
+            mysql:
+                image: mysql:8.0.21
+                env:
+                    MYSQL_ROOT_PASSWORD: password
+                    MYSQL_DATABASE: cicd_test_test
+                ports:
+                    - 3306:3306
+                options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
         steps:
 #            - uses: actions/checkout@v3
 #            - run: mysql -h 127.0.0.1 --port 3306 -u root -ppassword -e 'CREATE DATABASE IF NOT EXISTS cicd_test_test;'
@@ -77,7 +77,6 @@ jobs:
 #
 # SSH KEY is the id_rsa file
             - name: Copy SSH key
-              uses: actions/checkout@v3
               run: |
                   echo "${{ secrets.SSH_KEY }}" >> ./id_rsa
                   chmod 600 id_rsa
