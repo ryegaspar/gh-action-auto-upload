@@ -75,6 +75,7 @@ jobs:
               env:
                   DB_PASSWORD: password
 
+# SSH KEY is the id_rsa file
             - name: Copy SSH key
               run: |
                   echo "${{ secrets.SSH_KEY }}" >> ./id_rsa
