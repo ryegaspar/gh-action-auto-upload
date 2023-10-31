@@ -1,0 +1,1 @@
+CREATE DATABASE cicd_test;
