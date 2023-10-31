@@ -17,7 +17,7 @@ git config --global --add safe.directory $PROJECT_DIR
 
 # the project has not been cloned yet (first deploy)
 if [ ! -d $PROJECT_DIR"/.git" ]; then
-  GIT_SSH_COMMAND="ssh -i ~/.ssh/id_rsa -o IdentitiesOnly=yes" git clone git@github.com:ryegaspar/cicd-test.git .
+  GIT_SSH_COMMAND="ssh -i ~/.ssh/id_rsa -o IdentitiesOnly=yes" git clone git@github.com:ryegaspar/gh-action-auto-upload.git .
 else
   GIT_SSH_COMMAND="ssh -i ~/.ssh/id_rsa -o IdentitiesOnly=yes" git pull
 fi
